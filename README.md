@@ -35,7 +35,12 @@ Three relational tables were created to support the analysis:
 **Recommendation:** Implement loyalty programs and personalized marketing to increase average order value among high-frequency, low-spend customers.
 
 ```sql
--- Query goes here
+SELECT c.name, sum(p.price * o.quantity) AS total_spent
+FROM customers c
+JOIN Orders o ON c.customer_id = o.customer_id
+JOIN Products p ON o.product_id = p.product_id
+GROUP BY c.name
+ORDER BY total_spent DESC;
 ```
 
 ![Total Spend per Customer](assets/total-spend-per-customer.png)
@@ -52,7 +57,11 @@ Three relational tables were created to support the analysis:
 **Recommendation:** Optimize inventory for high-volume items and run targeted promotions for high-margin products.
 
 ```sql
--- Query goes here
+SELECT p.product_name, SUM(o.quantity) AS total_sold
+FROM Orders o
+JOIN Products p ON o.product_id = p.product_id
+GROUP BY p.product_name
+ORDER BY total_sold DESC;
 ```
 
 ![Top Selling Products](assets/top-selling-products.png)
@@ -69,7 +78,12 @@ Three relational tables were created to support the analysis:
 **Recommendation:** Prioritize regional marketing campaigns in high-performing states while developing strategies to capture emerging markets.
 
 ```sql
--- Query goes here
+SELECT c.state, SUM(p.price * o.quantity) AS total_sales
+FROM Customers c
+JOIN Orders o ON c.customer_id = o.customer_id
+JOIN Products p ON o.product_id = p.product_id
+GROUP BY c.state
+ORDER BY total_sales DESC;
 ```
 
 ![Sales by State](assets/sales-by-state.png)
@@ -86,7 +100,12 @@ Three relational tables were created to support the analysis:
 **Recommendation:** Align seasonal marketing campaigns and inventory planning around identified high and low periods.
 
 ```sql
--- Query goes here
+SELECT strftime('%Y-%m', o.order_date) AS month,
+       SUM(p.price * o.quantity) AS revenue
+FROM Orders o
+JOIN Products p ON o.product_id = p.product_id
+GROUP BY strftime('%Y-%m', o.order_date)
+ORDER BY month;
 ```
 
 ![Monthly Sales Trend](assets/monthly-sales-trend.png)
