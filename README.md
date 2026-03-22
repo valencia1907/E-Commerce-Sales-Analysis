@@ -42,6 +42,15 @@ JOIN Products p ON o.product_id = p.product_id
 GROUP BY c.name
 ORDER BY total_spent DESC;
 ```
+*Table — Customer vs. Total Spend*
+
+name |	total_spent |
+|------|-------------|
+Charlie Lee |	1100.0 |
+Alice Green |	975.0 |
+Dana White |	300.0 |
+Bob Smith |	240.0 |
+Ethan Brown |	125.0 |
 
 ![Total Spend per Customer](assets/total-spend-per-customer.png)
 *Bar chart — Customer vs. Total Spend*
@@ -64,6 +73,15 @@ GROUP BY p.product_name
 ORDER BY total_sold DESC;
 ```
 
+*Table — Product vs. Units Sold*
+| product_name | total_sold
+|------|-------------|
+Water Bottle | 8
+Laptop | 2
+Headphones | 2
+Coffee Table | 2
+Desk Chair | 1
+
 ![Top Selling Products](assets/top-selling-products.png)
 *Horizontal bar chart — Product vs. Units Sold*
 
@@ -85,6 +103,12 @@ JOIN Products p ON o.product_id = p.product_id
 GROUP BY c.state
 ORDER BY total_sales DESC;
 ```
+*Table — State vs. Revenue*
+state|	total_sales|
+|------|-------------|
+TX|	1340.0|
+FL|	1275.0|
+WA|	125.0|
 
 ![Sales by State](assets/sales-by-state.png)
 *Column chart — State vs. Revenue*
@@ -107,6 +131,13 @@ JOIN Products p ON o.product_id = p.product_id
 GROUP BY strftime('%Y-%m', o.order_date)
 ORDER BY month;
 ```
+*Table — Month vs. Revenue*
+month|	revenue|
+|------|-------------|
+2023-01|	975.0|
+2023-02|	865.0|
+2023-03|	900.0|
+
 
 ![Monthly Sales Trend](assets/monthly-sales-trend.png)
 *Line chart — Month vs. Revenue*
