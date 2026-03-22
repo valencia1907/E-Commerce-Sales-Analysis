@@ -53,6 +53,7 @@ Bob Smith |	240.0 |
 Ethan Brown |	125.0 |
 
 ![Total Spend per Customer](assets/total-spend-per-customer.png)
+
 *Bar chart — Customer vs. Total Spend*
 
 ---
@@ -83,6 +84,7 @@ Coffee Table | 2
 Desk Chair | 1
 
 ![Top Selling Products](assets/top-selling-products.png)
+
 *Horizontal bar chart — Product vs. Units Sold*
 
 ---
@@ -111,6 +113,7 @@ FL|	1275.0|
 WA|	125.0|
 
 ![Sales by State](assets/sales-by-state.png)
+
 *Column chart — State vs. Revenue*
 
 ---
@@ -140,6 +143,7 @@ month|	revenue|
 
 
 ![Monthly Sales Trend](assets/monthly-sales-trend.png)
+
 *Line chart — Month vs. Revenue*
 
 ---
@@ -153,6 +157,6 @@ month|	revenue|
 
 ---
 
-## Author
+## Created By
 
 **Valencia Cummings**
